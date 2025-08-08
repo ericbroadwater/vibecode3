@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 20%;
+    --primary: 252 88% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 20% 50%;
+    --accent: 210 40% 98%;
+    --accent-foreground: 210 40% 20%;
+    --destructive: 8 82% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 205 84% 82%;
+    --input: 205 84% 82%;
+    --ring: 252 88% 68%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 40% 20%;
+    --foreground: 0 0% 95%;
+    --card: 210 40% 20%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 40% 20%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 252 88% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 210 40% 15%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 8 82% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 30%;
+    --input: 215 20% 30%;
+    --ring: 252 88% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Contentstack brand-specific styles */
+.contentstack-gradient {
+  background: linear-gradient(135deg, #253142 0%, #637392 100%);
+}
+
+.contentstack-text-gradient {
+  background: linear-gradient(135deg, #7c5ef7 0%, #e85e40 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom button styles following Contentstack brand */
+.btn-contentstack-primary {
+  @apply bg-contentstack-purple text-white hover:bg-contentstack-purple/90 transition-colors;
+}
+
+.btn-contentstack-secondary {
+  @apply bg-contentstack-cement text-white hover:bg-contentstack-cement/90 transition-colors;
+}
+
+.btn-contentstack-outline {
+  @apply border-contentstack-purple text-contentstack-purple hover:bg-contentstack-purple hover:text-white transition-colors;
+}
+
+/* Focus states using Contentstack purple */
+.focus-contentstack {
+  @apply focus:ring-2 focus:ring-contentstack-purple focus:ring-offset-2;
+}
